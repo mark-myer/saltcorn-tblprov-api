@@ -296,7 +296,7 @@ async function api_get_fields(cfg) {
   getState().log(4, `api_get_fields = ${cfg}`);
   console.log(cfg.fields)
   return (
-    (cfg || {}).fields || [
+    ((cfg).fields || [
       {
         name: "id",
         label: "ID",
@@ -305,7 +305,7 @@ async function api_get_fields(cfg) {
         required: true,
         is_unique: true,
       },
-    ]
+    ])||{}
   );
 }
 

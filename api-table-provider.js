@@ -294,6 +294,7 @@ function api_configuration_workflow(req) {
 
 async function api_get_fields(cfg) {
   getState().log(4, `api_get_fields = ${cfg}`);
+  console.log(cfg.fields)
   return (
     (cfg || {}).fields || [
       {
@@ -344,6 +345,7 @@ async function api_get_table_rows(cfg, where) {
   if (!data || !data.success)
     throw new Error(`Invalid response ${JSON.stringify(data)} from ${url}`);
   if (data.success === true && data.data) return data.data;
+  console.log(data.success)
   return data.success;
 }
 
